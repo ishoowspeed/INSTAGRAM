@@ -3,7 +3,6 @@ var tablicaKomorek = Array.from(komorki);
 let lajki = 8433;
 let polubione = false;
 
-// Tasowanie
 var kolejnosc = [];
 for (var i = 0; i < tablicaKomorek.length; i++) {
   kolejnosc.push(i);
@@ -19,20 +18,18 @@ for (var i = 0; i < kolejnosc.length; i++) {
   siatka.appendChild(tablicaKomorek[kolejnosc[i]]);
 }
 
-// Przypisanie kliknięć po tasowaniu
-var posortowane = document.querySelectorAll(".komorka");
-for (var i = 0; i < posortowane.length; i++) {
+var aktualneKomorki = Array.from(document.querySelectorAll(".komorka"));
+for (var i = 0; i < aktualneKomorki.length; i++) {
   (function(el, idx) {
     el.onclick = function() { otworz(idx); };
-  })(posortowane[i], i);
+  })(aktualneKomorki[i], i);
 }
 
 var aktualnyIndeks = null;
-var tablicaDOM = Array.from(posortowane);
 
 function otworz(indeks) {
   aktualnyIndeks = indeks;
-  var komorka = tablicaDOM[indeks];
+  var komorka = aktualneKomorki[indeks];
   var img = komorka.querySelector("img");
   var obszar = document.getElementById("modalZdjecieObszar");
   var napisKomorka = komorka.querySelector(".napis-zastepczy");
