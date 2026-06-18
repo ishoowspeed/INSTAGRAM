@@ -1,5 +1,6 @@
 var komorki = document.querySelectorAll(".komorka");
 var tablicaKomorek = Array.from(komorki);
+let lajki = 8433;
 
 var kolejnosc = [];
 for (var i = 0; i < tablicaKomorek.length; i++) {
@@ -76,11 +77,13 @@ function polub() {
   var serce = document.getElementById("serceBtn");
   if (serce.classList.contains("polubione")) {
     serce.classList.remove("polubione");
-    serce.textContent = "♡";
-  } else {
+    serce.textContent = "♡";           // pusty serduszko
+    document.getElementById("serceBtn").textContent = lajki - 1;
+} else {
     serce.classList.add("polubione");
     serce.textContent = "❤️";
-  }
+    document.getElementById("serceBtn").textContent = lajki + 1;
+}
 }
 
 function pokazZakladke(nazwa, btn) {
