@@ -1,7 +1,3 @@
-body{
-    user-select: none;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -42,21 +38,23 @@ body {
 
 .siatka {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  padding: 3px;
+
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: clamp(2px, 0.5vw, 4px);
+  padding: clamp(2px, 0.5vw, 4px);
   margin-bottom: 60px;
 }
 
-
 .komorka {
-  aspect-ratio: 1 / 1;  
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background-color: #efefef;
   cursor: pointer;
   position: relative;
-}
 
+  min-width: 100px;
+  max-width: 200px;
+}
 
 .komorka img {
   width: 100%;
@@ -66,10 +64,10 @@ body {
   transition: transform 0.2s;
 }
 
-
 .komorka:hover img {
   transform: scale(1.05);
 }
+
 .napis-zastepczy {
   display: none;
   position: absolute;
@@ -82,15 +80,14 @@ body {
   text-align: center;
 }
 
-
 .komorka.brak .napis-zastepczy {
   display: block;
 }
 
 .modal-tlo {
-  display: none; 
+  display: none;
   position: fixed;
-  inset: 0;        
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 100;
   justify-content: center;
@@ -223,4 +220,34 @@ body {
 
 .dolny-pasek span {
   cursor: pointer;
+}
+
+@media (max-width: 360px) {
+  .siatka {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    padding: 2px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 480px) {
+  .siatka {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3px;
+    padding: 3px;
+  }
+}
+
+@media (min-width: 481px) {
+  body {
+    max-width: 600px;
+  }
+  .siatka {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+    padding: 4px;
+  }
+  .komorka {
+    max-width: none;
+  }
 }
