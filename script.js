@@ -78,11 +78,9 @@ function polub() {
   if (serce.classList.contains("polubione")) {
     serce.classList.remove("polubione");
     serce.textContent = "♡";           
-    document.getElementById("serceBtn").textContent = lajki - 1;
 } else {
     serce.classList.add("polubione");
     serce.textContent = "❤️";
-    document.getElementById("serceBtn").textContent = lajki + 1;
 }
 }
 
