@@ -77,7 +77,7 @@ function polub() {
   var serce = document.getElementById("serceBtn");
   if (serce.classList.contains("polubione")) {
     serce.classList.remove("polubione");
-    serce.textContent = "♡";           // pusty serduszko
+    serce.textContent = "♡";           
     document.getElementById("serceBtn").textContent = lajki - 1;
 } else {
     serce.classList.add("polubione");
