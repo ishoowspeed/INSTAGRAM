@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria Rudego</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <span class="logo">📷 Galeria</span>
+    <span class="ikony">♡ &nbsp; ✉</span>
+  </header>
+
+  <div class="zakladki">
+    <button class="zakladka aktywna" onclick="pokazZakladke('galeria', this)">🖼️ Galeria</button>
+    <button class="zakladka" onclick="pokazZakladke('aktualnosci', this)">📢 Nowości</button>
+  </div>
+
+  <main class="siatka" id="siatka">
+
+    <div class="komorka" onclick="otworz(0)">
+      <img src="zdjecie1.png" alt="Zdjęcie 1" onerror="this.style.display='none'; this.parentElement.classList.add('brak')" />
+      <div class="napis-zastepczy">ZDJĘCIE 1</div>
+    </div>
+
+    <div class="komorka" onclick="otworz(1)">
+      <img src="F8wJv.jpg" alt="Zdjęcie 2" onerror="this.style.display='none'; this.parentElement.classList.add('brak')" />
+      <div class="napis-zastepczy">ZDJĘCIE 2</div>
+    </div>
+
+  </main>
+
+  <section class="aktualnosci-lista" id="aktualnosci" style="display:none">
+
+    <div class="ogloszenie">
+      <div class="ogloszenie-data">18.06.2025</div>
+      <div class="ogloszenie-tresc">AKTULIZACJA! <br>- Dodano nowego mema.<br>- Dodano zakładke Nowości</div>
+    </div>
+
+  </section>
+
+  <div class="modal-tlo" id="modalTlo">
+    <div class="modal-okno">
+
+      <button class="zamknij" onclick="zamknij()">✕</button>
+
+      <div class="modal-zdjecie-obszar" id="modalZdjecieObszar"></div>
+
+      <div class="modal-info">
+        <div class="modal-gora">
+          <div class="avatar">PS</div>
+          <span class="nazwa-uzytkownika">PASIUK</span>
+        </div>
+        <div class="modal-akcje">
+          <button class="serce" id="serceBtn" onclick="polub()">♡ 8433</button>
+          <span>💬</span>
+          <span>✉</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <nav class="dolny-pasek">
+    <span>🏠</span>
+    <span>🔍</span>
+    <span>➕</span>
+    <span>👤</span>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>
